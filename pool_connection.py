@@ -9,9 +9,12 @@ connection_pool = pool.SimpleConnectionPool(
     port="5432",
     database="database"
 )
+
+# Obtiene una conexion del grupo de conexiones
 def get_connection():
     return connection_pool.getconn()
 
+# Regresa a la conexion del grupo de conexiones
 def release_connection(conn):
     connection_pool.putconn(conn)
 
